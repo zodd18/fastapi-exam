@@ -12,8 +12,8 @@
     <title>Cliente REST</title>
 </head>
 
-<body class="bg-dark">
-    <div id="app" class="container bg-white p-5">
+<body class="bg-dark bg-gradient">
+    <div id="app" class="container bg-white p-5 my-5 card shadow">
         <h1 class="fw-bold text-center">Cliente REST</h1>
         <div class="mt-5">
             <h3>Lista de Geocaches:</h3>
@@ -24,7 +24,7 @@
                     <p><span class="fw-bold">lon: </span>{{geocache.lon}}</p>
                     <p><span class="fw-bold">hint: </span>{{geocache.hint}}</p>
                     <span class="fw-bold">image:</span>
-                    <img :src="geocache.image" width="350px">
+                    <img :src="geocache.image" width="350px" class="card mt-2">
                 </li>
             </ul>
             <p v-if="geocaches == null || geocaches.length == 0" class="text-danger">No hay geocaches</p>
@@ -39,7 +39,7 @@
                     <p><span class="fw-bold">lon: </span>{{geocache.lon}}</p>
                     <p><span class="fw-bold">hint: </span>{{geocache.hint}}</p>
                     <span class="fw-bold">image:</span>
-                    <img :src="geocache.image" width="350px">
+                    <img :src="geocache.image" width="350px" class="card mt-2">
                 </li>
             </ul>
             <p v-if="geocaches_hint_inside == null || geocaches_hint_inside.length == 0" class="text-danger">No hay geocaches</p>
@@ -74,7 +74,7 @@
                         <p><span class="fw-bold">lon: </span>{{geocache.lon}}</p>
                         <p><span class="fw-bold">hint: </span>{{geocache.hint}}</p>
                         <span class="fw-bold">image:</span>
-                        <img :src="geocache.image" width="350px">
+                        <img :src="geocache.image" width="350px" class="card mt-2">
                     </li>
                 </ul>
             </div>
@@ -90,7 +90,7 @@
                     <p><span class="fw-bold">lon: </span>{{geocache.lon}}</p>
                     <p><span class="fw-bold">hint: </span>{{geocache.hint}}</p>
                     <span class="fw-bold">image:</span>
-                    <img :src="geocache.image" width="350px">
+                    <img :src="geocache.image" width="350px" class="card mt-2">
                 </li>
             </ul>
             <p v-if="geocaches_not_found == null || geocaches_not_found.length == 0" class="text-danger">No quedan geocaches por encontrar</p>
