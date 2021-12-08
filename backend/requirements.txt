@@ -1,0 +1,6 @@
+fastapi
+passlib
+pydantic
+pymongo
+starlette
+uvicorn
