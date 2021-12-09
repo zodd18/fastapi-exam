@@ -13,9 +13,11 @@ app = FastAPI()
 app.include_router(geocaches)
 app.include_router(logbooks)
 
+
 @app.get("/")
 def read_root():
     return RedirectResponse(url='/docs')
+
 
 # Allow all Origins
 app = CORSMiddleware(
