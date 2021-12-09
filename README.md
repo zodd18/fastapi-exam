@@ -49,4 +49,4 @@ Se han utilizado HTML5 y AJAX para el cliente AJAX (directorio `ajax_client`).
 
 ## Documentación
 
-La documentación de la API REST viene definida en la misma API, concretamente en `http://localhost:8000/docs` .
+La documentación de la API REST viene definida en la misma API haciendo uso de OpenAPI, concretamente en `http://localhost:8000/docs` .
