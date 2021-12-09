@@ -1,6 +1,7 @@
 fastapi
 passlib
 pydantic
+pydantic[email]
 pymongo
 starlette
 uvicorn
