@@ -27,7 +27,7 @@ def get_geocaches_by_hint(hint):
 def get_not_found_geocaches():
     found_geocaches= set([logbook['geocache_id'] for logbook in logbook_service.get_all_logbooks()])
     
-    return to_json([geocache for geocache in get_all_geocaches() if str(geocache['_id']) not in found_geocaches])
+    return to_json([geocache for geocache in get_all_geocaches() if (geocache['_id']['$oid']) not in found_geocaches])
     
 
 def create_geocache(geocache: Geocache):
