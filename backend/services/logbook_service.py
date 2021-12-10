@@ -4,14 +4,16 @@ from models.logbook import Logbook
 
 from passlib.hash import sha256_crypt
 
+from utils.utils import to_json
+
 from services import geocache_service
 
 def get_all_logbooks():
-    return db.logbook.find()
+    return to_json(db.logbook.find())
 
 def get_logbook(id):
     try:
-        return db.logbook.find_one({'_id': ObjectId(id)})
+        return to_json(db.logbook.find_one({'_id': ObjectId(id)}))
     except:
         return None
 
@@ -28,4 +30,4 @@ def delete_logbook(id):
     return get_logbook(id)
 
 def get_logbooks_by_geocache(geocache_id):
-    return db.logbook.find({'geocache_id': ObjectId(geocache_id)})
+    return to_json(db.logbook.find({'geocache_id': ObjectId(geocache_id)}))

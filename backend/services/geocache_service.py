@@ -1,29 +1,33 @@
 from bson.objectid import ObjectId
 from config.db import db
 from models.geocache import Geocache
+from utils.utils import to_json
 
 from passlib.hash import sha256_crypt
 
 from services import logbook_service
 
 def get_all_geocaches():
-    return db.Geocache.find()
+    return to_json(db.Geocache.find())
 
 def get_geocache(id):
-    return db.Geocache.find_one({'_id': ObjectId(id)})
+    try:
+        return to_json(db.Geocache.find_one({'_id': ObjectId(id)}))
+    except:
+        return None
 
 def get_logbooks_by_email(email):
     logbooks = db.logbook.find({'email': email})
     
-    return [get_geocache(logbook['geocache_id']) for logbook in logbooks]
+    return to_json([get_geocache(logbook['geocache_id']) for logbook in logbooks])
 
 def get_geocaches_by_hint(hint):
-    return db.Geocache.find({'hint': hint})
+    return to_json(db.Geocache.find({'hint': hint}))
 
 def get_not_found_geocaches():
     found_geocaches= set([logbook['geocache_id'] for logbook in logbook_service.get_all_logbooks()])
     
-    return [geocache for geocache in get_all_geocaches() if str(geocache['_id']) not in found_geocaches]
+    return to_json([geocache for geocache in get_all_geocaches() if str(geocache['_id']) not in found_geocaches])
     
 
 def create_geocache(geocache: Geocache):
