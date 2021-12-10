@@ -5,9 +5,11 @@
 (Directorio `backend`)
 
 #### Framework
+
 Se ha utilizado el framework FastAPI (Python 3) para la API REST.
 
 #### Base de datos
+
 En cuanto a la base de datos, se ha utilizado MongoDB (credenciales disponibles en `./backend/config/db.py`)
 
 ## Frontend
@@ -15,37 +17,52 @@ En cuanto a la base de datos, se ha utilizado MongoDB (credenciales disponibles 
 (Directorio `frontend`)
 
 #### Cliente REST
-Se han utilizado HTML5 y el framework Vue.js (JavaScript) para el cliente REST (directorio `rest_client`).
+
+Se han utilizado HTML5 y el framework Vue.js (JavaScript) para el cliente REST (directorio `./frontend/rest_client`).
 
 #### Cliente AJAX
-Se han utilizado HTML5 y AJAX para el cliente AJAX (directorio `ajax_client`).
+
+Se han utilizado HTML5 y AJAX para el cliente AJAX (directorio `./frontend/ajax_client`).
+
+#### Cliente Textual
+
+Se han utilizado python3 para el cliente Textual (directorio `./frontend/text_client`).
+
 
 # Manual de usuario
 
 ## Instalación del backend
 
-* Descargar e instalar [python3](https://www.python.org/downloads/) .
+- Descargar e instalar [python3](https://www.python.org/downloads/) .
 
-* Ejecutar el fichero `./backend/install.bat`
-    - Alternativamente ejecutar:
-        ```
-        pip3 install -r ./backend/requirements.txt
-        ```
-        
+- Ejecutar el fichero `./backend/install.bat`
+  - Alternativamente ejecutar:
+    ```
+    pip3 install -r ./backend/requirements.txt
+    ```
+
 ## Ejecución
 
 #### API REST
-* Ejecutar el fichero `./backend/run.bat`
-    - Alternativamente y estando dentro del directorio `./backend` ejecutar:
-        ```
-        uvicorn run:app --reload
-        ```
-    - El servidor se abrirá en `http://localhost:8000`
+
+- Ejecutar el fichero `./backend/run.bat`
+  - Alternativamente y estando dentro del directorio `./backend` ejecutar:
+    ```
+    uvicorn run:app --reload
+    ```
+  - El servidor se abrirá en `http://localhost:8000`
+
 #### Cliente REST
-* Abrir el fichero `./frontend/rest_client/index.html` en un navegador de preferencia (p. ej. [Firefox](https://www.mozilla.org/es-ES/firefox/new/)).
+
+- Abrir el fichero `./frontend/rest_client/index.html` en un navegador de preferencia (p. ej. [Firefox](https://www.mozilla.org/es-ES/firefox/new/)).
 
 #### Cliente AJAX
-* Abrir el fichero `./frontend/ajax_client/index.html` en un navegador de preferencia (p. ej. [Firefox](https://www.mozilla.org/es-ES/firefox/new/)).
+
+- Abrir el fichero `./frontend/ajax_client/index.html` en un navegador de preferencia (p. ej. [Firefox](https://www.mozilla.org/es-ES/firefox/new/)).
+
+#### Cliente Textual
+
+- Ejecutar el fichero `./frontend/text_client/main.py` utilizando el comando `python3 ./frontend/text_client/main.py`.
 
 ## Documentación
 

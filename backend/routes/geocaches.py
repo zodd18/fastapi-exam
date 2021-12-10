@@ -4,6 +4,7 @@ from services import geocache_service
 from services import logbook_service
 from models.geocache import Geocache
 from services.geocache_service import delete_geocache, update_geocache
+from typing import Optional
 
 from bson import json_util
 
@@ -14,8 +15,15 @@ import json
 geocaches = APIRouter()
 
 @geocaches.get("/geocaches")
-async def read_geocaches():
-    geocaches = response_json(geocache_service.get_all_geocaches())
+async def read_geocaches(hint: Optional[str] = None, email: Optional[str] = None):
+    geocaches = []
+    
+    if hint:
+        geocaches = response_json(geocache_service.get_geocaches_by_hint(hint))
+    elif email:
+        geocaches = response_json(geocache_service.get_logbooks_by_email(email))
+    else:    
+        geocaches = response_json(geocache_service.get_all_geocaches())
     
     try:    
         return geocaches
